@@ -4,6 +4,8 @@
  *
  * Based on generic pmbus driver and ltc2978 driver
  *
+ * Author: Chih-Pei Chang <Chih-Pei.Chang@qct.io>
+ *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
  * the Free Software Foundation; either version 2 of the License, or
