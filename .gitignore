@@ -1,6 +1,10 @@
 # Object files
 *.o
 *.ko
+*.cmd
+*.mod.c
+*.symvers
+*.order
 *.obj
 *.elf
 
