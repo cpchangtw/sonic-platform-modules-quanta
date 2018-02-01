@@ -1,0 +1,15 @@
+[Unit]
+Description=Quanta IX1B-32X Platform initialization service
+Before=pmon.service
+DefaultDependencies=no
+
+[Service]
+Type=oneshot
+ExecStart=/usr/local/bin/quanta_ix1b_util.py install
+ExecStop=/usr/local/bin/quanta_ix1b_util.py clean
+#ExecStart=/usr/local/bin/quanta_ix1b.sh start
+#ExecStop=/usr/local/bin/quanta_ix1b.sh stop
+RemainAfterExit=yes
+
+[Install]
+WantedBy=multi-user.target
