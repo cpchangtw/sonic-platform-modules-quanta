@@ -90,7 +90,7 @@ def show_help():
            
 def show_log(txt):
     if DEBUG == True:
-        print "[D7032]"+txt    
+        print "[IX1B-32X]"+txt
     return
     
 def exec_cmd(cmd, show):
