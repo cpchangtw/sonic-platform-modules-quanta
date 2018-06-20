@@ -90,7 +90,7 @@ def show_help():
            
 def show_log(txt):
     if DEBUG == True:
-        print "[IX1B-32X]"+txt
+        print "[IX4-64X]"+txt
     return
     
 def exec_cmd(cmd, show):
@@ -106,14 +106,14 @@ def exec_cmd(cmd, show):
         
 instantiate =[
 #turn on module power
-'echo 53 > /sys/class/gpio/export',
-'echo out > /sys/class/gpio/gpio53/direction',
-'echo 1 >/sys/class/gpio/gpio53/value',
+'echo 21 > /sys/class/gpio/export',
+'echo out > /sys/class/gpio/gpio21/direction',
+'echo 1 >/sys/class/gpio/gpio21/value',
 #turn on 100G led by default
-'i2cset -y 0x13 0x38 0x00 0xff',
-'i2cset -y 0x13 0x38 0x01 0xff',
-'i2cset -y 0x13 0x39 0x00 0xff',
-'i2cset -y 0x13 0x39 0x01 0xff'
+'i2cset -y 0x10 0x3a 0x04 0x00',
+'i2cset -y 0x11 0x3a 0x04 0x00',
+'i2cset -y 0x12 0x3a 0x04 0x00',
+'i2cset -y 0x13 0x3a 0x04 0x00'
 ]
 
 drivers =[
@@ -122,10 +122,9 @@ drivers =[
 'i2c-dev',
 'i2c-mux-pca954x',
 'gpio-pca953x',
-'qci_pmbus',
 'leds-gpio',
-'qci_cpld_qsfp28',
-'qci_platform_ix1b'
+'qci_bwde_cpld',
+'qci_platform_ix4'
 ]
  
 
@@ -178,7 +177,7 @@ def install():
             if FORCE == 0:        
                 return  status        
     else:
-        print " ix1b driver already installed...."           
+        print " ix4 driver already installed...." 
     return
 
 def uninstall():
