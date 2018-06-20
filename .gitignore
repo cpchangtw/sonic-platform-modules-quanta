@@ -2,11 +2,13 @@
 *.o
 *.ko
 *.cmd
+*.mod
 *.mod.c
 *.symvers
 *.order
 *.obj
 *.elf
+*.bak
 
 # Precompiled Headers
 *.gch
