@@ -1,0 +1,25 @@
+[Unit]
+Description=Quanta IX2-56X Platform initialization service
+Requires=opennsl-modules-3.16.0-5-amd64.service
+Requires=database.service
+After=opennsl-modules-3.16.0-5-amd64.service
+After=database.service
+DefaultDependencies=no
+
+[Service]
+Type=simple
+ExecStartPre=/usr/local/bin/quanta_ix2_util.py install
+ExecStart=/usr/local/bin/quanta_ix2_postinit.sh start
+ExecStop=/usr/local/bin/quanta_ix2_postinit.sh stop
+ExecStopPost=/usr/local/bin/quanta_ix2_util.py clean
+
+KillSignal=SIGKILL
+SuccessExitStatus=0 SIGKILL
+
+# Resource Limitations
+LimitCORE=infinity 
+
+RemainAfterExit=yes
+
+[Install]
+WantedBy=multi-user.target
